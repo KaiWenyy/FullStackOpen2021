@@ -1,0 +1,17 @@
+title spa_new_note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+
+note over browser:
+browser starts executing js-code
+that fetches the form-element,
+and registers an event handler
+to handle the form submit event
+end note
+
+note over browser:
+browser executes the event handler
+that prevents the default handling of form submit,
+rerenders the note list on the page
+and sends the new note to the server
+end note
