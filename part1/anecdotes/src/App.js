@@ -23,6 +23,7 @@ const App = () => {
   const min = 0
   const max = 7
   
+  
   const handleClickVote = () =>{
     const vote_copy = { ...vote }
     vote_copy[selected]+=1
