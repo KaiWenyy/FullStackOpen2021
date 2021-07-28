@@ -119,6 +119,19 @@ const App = () => {
             setNewNumber('')
           }
         )
+        .catch(error => {
+          // this is the way to access the error message
+          console.log('error', error.response.data)
+          setMessage(
+            `${JSON.stringify(error.response.data)}`
+          )
+          setTimeout(() => {
+            setMessage(null)
+          }, 5000)
+          setStyle(error_style)
+          setNewName('')
+          setNewNumber('')
+        })
     }
     else{
       //window.alert(`${newName} is already added to phonebook`)
@@ -171,18 +184,12 @@ const App = () => {
   }
   const hook = () => {
     console.log('effect')
-    /*axios
-      .get('http://localhost:3001/persons')
-      .then(response => {
-        console.log('promise fulfilled')
-        setPersons(response.data)
-      })
-    */
    dataService
     .getAll()
     .then(response=>setPersons(response))
   }
   useEffect(hook,[])
+
   return (
     <div>
       <h2>Phonebook</h2>
