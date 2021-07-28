@@ -1,0 +1,21 @@
+GET http://localhost:3001/api/persons/60ffacb17d1c3f7904df75b6
+###
+GET http://arcane-reef-20213.herokuapp.com/api/persons
+
+###
+POST http://arcane-reef-20213.herokuapp.com/api/persons
+content-type: application/json
+
+{
+    "name":"bcdv",
+    "number": "0978391127"
+}
+
+###
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "name":"dean",
+    "number": "0978391127"
+}
